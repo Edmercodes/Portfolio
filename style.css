@@ -1,0 +1,309 @@
+:root {
+  --blue-1: #7BD5F5;
+  --blue-2: #787FF6;
+  --blue-3: #AADEDE;
+  --blue-4: #1CA7EC;
+  --blue-5: #1F2F98;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background-color: var(--blue-1);
+  color: #222;
+  line-height: 1.6;
+}
+
+header {
+  text-align: center;
+  background: var(--blue-5);
+  color: white;
+  padding: 3rem 1rem;
+}
+
+header img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid white;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  background: linear-gradient(to right, var(--blue-3), white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+header p {
+  font-size: 1.1rem;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.tagline {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 1.3rem;
+  color: #4b4b4b;
+  letter-spacing: 1px;
+}
+.intro {
+  max-width: 600px;
+  margin: 0.5rem auto 0;
+  font-size: 1rem;
+  color: #e0e0e0;
+}
+
+.nav {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nav a {
+  text-decoration: none;
+  background-color: white;
+  color: var(--blue-4);
+  padding: 0.7rem 1.4rem;
+  border-radius: 5px;
+  border: 2px solid var(--blue-4);
+  transition: 0.3s;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  background-color: var(--blue-4);
+  color: white;
+}
+.about-me {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.about-me h2 {
+  color: var(--blue-5);
+  margin-bottom: 1rem;
+}
+
+.about-me p {
+  font-size: 1.1rem;
+  color: #333;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.previews {
+  text-align: center;
+}
+
+.previews h2 {
+  color: var(--blue-5);
+  margin-bottom: 1.5rem;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  padding: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+}
+
+.card h3 {
+  color: var(--blue-4);
+  margin-bottom: 0.5rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.view-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: var(--blue-4);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.view-btn:hover {
+  background-color: var(--blue-5);
+}
+
+@media (max-width: 600px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.back-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--blue-4);
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+.back-top:hover { background-color: var(--blue-5); }
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1s ease forwards;
+}
+@keyframes fadeIn {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+main {
+  max-width: 800px;
+  margin: auto;
+  padding: 2rem 1.5rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h2 {
+  color: var(--blue-5);
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+.contacts h2 {
+  margin-bottom: 0.8rem;
+  color: var(--blue-5);
+}
+.contacts p {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+.contacts a {
+  font-size: 1.1rem;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: var(--blue-4);
+  color: white;
+  margin-top: 2rem;
+  box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cert-img:hover, .poster-img:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 1rem;
+  }
+  main, .project-container, .skills-hobbies-container {
+    margin: 1rem;
+    padding: 1.5rem;
+  }
+}
+
+/* ===== DARK MODE FOR SPECIFIC PAGES ===== */
+
+/* Project page */
+.cert-container {
+  background: white;
+  color: #222;
+}
+
+.cert-container h2,
+.cert-container h3 {
+  color: var(--blue-5);
+}
+
+.cert-container p {
+  color: #333;
+}
+
+/* Resume page */
+.resume-container {
+  background: white;
+  color: #222;
+}
+
+.resume-container h2,
+.resume-container h3 {
+  color: var(--blue-5);
+}
+
+.resume-container p {
+  color: #333;
+}
+
+.resume-container ul li {
+  color: #333;
+}
+
+/* About me and intro paragraphs */
+.about-me p,
+.intro p {
+  color: #333;
+}
+
+/* Navigation on all pages */
+.nav {
+  background: var(--blue-5);
+}
+
+.nav a {
+  background-color: white;
+  color: var(--blue-4);
+  border-color: var(--blue-4);
+}
+
+.nav a:hover {
+  background-color: var(--blue-4);
+  color: white;
+}
+

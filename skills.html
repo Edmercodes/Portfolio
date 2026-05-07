@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills & Hobbies | Edmer Pino</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--blue-1);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .nav {
+      background: linear-gradient(135deg, var(--blue-5), var(--blue-3));
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      background-color: white;
+      color: var(--blue-4);
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      border: 2px solid var(--blue-4);
+      transition: 0.3s;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .nav a:hover {
+      background-color: var(--blue-4);
+      color: white;
+    }
+
+    .skills-hobbies-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 850px;
+      margin: 2rem auto;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    .skills-hobbies-container h2 {
+      color: var(--blue-5);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    .category {
+      margin-bottom: 2rem;
+    }
+
+    .category h3 {
+      color: var(--blue-4);
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+
+    .list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      justify-content: center;
+    }
+
+    .list span {
+      background-color: var(--blue-1);
+      padding: 0.6rem 1.2rem;
+      border-radius: 20px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: #222;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: 0.3s ease;
+    }
+
+    .list span:hover {
+      background-color: var(--blue-3);
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--blue-5);
+      color: white;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav a {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="nav">
+    <a href="index.html">🏠 Home</a>
+    <a href="education.html">Education</a>
+    <a href="project.html">Project</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="resume.html">Resume</a>
+  </div>
+
+  <section class="skills-hobbies-container">
+    <h2>🛠 Skills & Hobbies</h2>
+
+    <div class="category">
+      <h3>Technical & Creative Skills</h3>
+      <div class="list">
+        <span>Computer Literate</span>
+        <span>Front-End Development</span>
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>Video/Photo Editing</span>
+        <span>Painting</span>
+        <span>Drawing</span>
+        <span>Graphic Design</span>
+        <span>Logo Design</span>
+        <span>FIGMA Wiz</span>
+        <span>UI Design</span>
+        <span>Content Creation</span>
+        <span>Data Entry/Encoding</span>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>Personal Interests</h3>
+      <div class="list">
+        <span>🎨 Drawing</span>
+        <span>🎸 Playing Guitar</span>
+        <span>🎮 Video Gaming</span>
+        <span>💻 Developing</span>
+        <span>🎨 Designing</span>
+      </div>
+    </div>
+  </section>
+<script src="script.js"></script>
+</body>
+  <footer>
+    &copy; 2025 Edmer John D. Pino. All rights reserved.
+  </footer>
+</html>

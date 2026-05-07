@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edmer Pino | Homepage</title>
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .intro {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .intro h2 {
+      color: var(--blue-4);
+      margin-bottom: 1rem;
+      font-size: 1.75rem;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      color: #444;
+    }
+
+    .nav a {
+      font-size: 1rem;
+      padding: 0.8rem 1.5rem;
+    }
+
+    .photo-border {
+      display: inline-block;
+      padding: 8px;
+      border-radius: 50%;
+      background: linear-gradient(145deg, var(--blue-2), var(--blue-4));
+    }
+
+    .contacts {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .contacts a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      text-decoration: none;
+      color: var(--blue-4);
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .contacts a:hover {
+      color: var(--blue-5);
+    }
+
+    footer {
+      font-size: 0.9rem;
+    }
+
+    /* Auth Modal Styles */
+    .auth-modal {
+      display: flex;
+      position: fixed;
+      z-index: 9999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .auth-modal.hidden {
+      display: none;
+    }
+
+    .auth-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 150, 255, 0.5);
+      text-align: center;
+      width: 90%;
+      max-width: 400px;
+    }
+
+    .auth-container h2 {
+      color: var(--blue-5);
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
+    .auth-buttons {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .auth-btn {
+      flex: 1;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .auth-btn.guest {
+      background-color: #6c757d;
+      color: white;
+    }
+
+    .auth-btn.guest:hover {
+      background-color: #5a6268;
+    }
+
+    .auth-btn.admin {
+      background-color: var(--blue-4);
+      color: white;
+    }
+
+    .auth-btn.admin:hover {
+      background-color: var(--blue-5);
+    }
+
+    .password-prompt {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    .password-prompt.show {
+      display: block;
+    }
+
+    .password-prompt input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border: 2px solid var(--blue-3);
+      border-radius: 5px;
+      font-size: 1rem;
+      box-sizing: border-box;
+    }
+
+    .password-prompt input:focus {
+      outline: none;
+      border-color: var(--blue-5);
+      box-shadow: 0 0 5px rgba(0, 150, 255, 0.3);
+    }
+
+    .password-actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .password-actions button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .password-actions .confirm-btn {
+      background-color: var(--blue-4);
+      color: white;
+    }
+
+    .password-actions .confirm-btn:hover {
+      background-color: var(--blue-5);
+    }
+
+    .password-actions .cancel-btn {
+      background-color: #ddd;
+      color: #333;
+    }
+
+    .password-actions .cancel-btn:hover {
+      background-color: #bbb;
+    }
+
+    .user-badge {
+      display: none;
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: var(--blue-4);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 5px;
+      z-index: 100;
+      font-weight: bold;
+    }
+
+    .user-badge.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <!-- Authentication Modal -->
+  <div class="auth-modal" id="authModal">
+    <div class="auth-container">
+      <h2>🎨 Welcome to Portfolio</h2>
+      <p>Select your role:</p>
+      <div class="auth-buttons">
+        <button class="auth-btn guest" id="guestAuthBtn" type="button">👤 Guest</button>
+        <button class="auth-btn admin" id="adminAuthBtn" type="button">🔐 Admin</button>
+      </div>
+      <div class="password-prompt" id="passwordPrompt">
+        <input type="password" id="authPassword" placeholder="Enter admin password" autocomplete="off">
+        <div class="password-actions">
+          <button class="confirm-btn" id="confirmPasswordBtn" type="button">Confirm</button>
+          <button class="cancel-btn" id="cancelPasswordBtn" type="button">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- User Badge -->
+  <div class="user-badge" id="userBadge">
+    <span id="roleText">Loading...</span>
+    <button id="logoutBtn" style="background: rgba(255,255,255,0.3); border: none; color: white; margin-left: 10px; padding: 5px 10px; border-radius: 3px; cursor: pointer; font-weight: bold;">Logout</button>
+  </div>
+
+  <header>
+    <div class="photo-border">
+      <img src="edbarong.jpg" alt="Your Photo">
+    </div>
+    <h1>Edmer John D. Pino</h1>
+    <p class="tagline">Front-End Developer & Creative Designer passionate about crafting visually engaging and user-friendly experiences.</p>
+    <div class="nav">
+      <a href="education.html">Education</a>
+      <a href="project.html">Project</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="skills.html">Skills & Hobbies</a>
+      <a href="resume.html">Resume</a>
+    </div>
+
+  </header>
+   <section class="intro">
+    <h2>Hello, I'm Edmer 👋</h2>
+    <p>
+      I'm a dedicated and adaptable individual passionate about building systems and interfaces that solve real-world problems.
+      I specialize in front-end development, and I've worked on AI-integrated apps using modern technologies like React, Supabase,
+      and YOLOv5. I'm always open to opportunities where I can grow and contribute meaningful solutions.
+    </p>
+  </section>
+   <main>
+  <!-- 🧍 About Me Section -->
+  <section class="about-me">
+    <h2>About Me</h2>
+    <p>
+      Hello! I'm <strong>Edmer John D. Pino</strong>, an aspiring Front-End Developer and Creative Designer with a passion for blending technology and art. 
+      I enjoy designing responsive, visually engaging web pages and creating user-centered digital experiences. 
+      My goal is to continuously learn, innovate, and bring meaningful design ideas to life through modern development.
+    </p>
+  </section>
+
+  <!-- 💼 Project & Certifications Preview Section -->
+  <section class="previews">
+    <h2>Highlights</h2>
+    <div class="cards">
+      <div class="card">
+        <img src="aquatrackposter.png" alt="AquaTrack Poster">
+        <h3>AquaTrack Project</h3>
+        <p>AI-Integrated System for Water Refilling Station Management.</p>
+        <a href="project.html" class="view-btn">View Project</a>
+      </div>
+
+      <div class="card">
+        <img src="vgdcert.jpg" alt="Certificates">
+        <h3>Certifications</h3>
+        <p>View my design and development certificates.</p>
+        <a href="certifications.html" class="view-btn">View Certificates</a>
+      </div>
+
+      <div class="card">
+        <img src="artwork2.jpg" alt="Artworks">
+        <h3>Artworks</h3>
+        <p>See my collection of digital and traditional art.</p>
+        <a href="artworks.html" class="view-btn">View Artworks</a>
+      </div>
+    </div>
+  </section>
+</main>
+  <section class="contacts">
+    <h2>🔗Connect with Me</h2>
+    <p>📞 +63 975 912 9850 &nbsp; &nbsp; <br>📧 edmerpino5@gmail.com/pinoedmer4@gmail.com</p>
+    <a href="https://www.instagram.com/ej_bankai?igsh=Zm9tcmNibnh4NThs" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/share/16V9VJf9Qe/" target="_blank">Facebook</a>
+  </section>
+  <a href="#top" class="back-top">⬆ Back to top</a>
+  <script src="script.js"></script>
+</body>
+  <footer>
+    &copy; 2025 Edmer John D. Pino. All rights reserved. Designing experiences that connect creativity with functionality.
+  </footer>
+</html>

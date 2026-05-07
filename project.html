@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Edmer Pino</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--blue-1);
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .nav {
+      background: linear-gradient(135deg, var(--blue-5), var(--blue-3));
+      padding: 1rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .nav a {
+      text-decoration: none;
+      background-color: white;
+      color: var(--blue-4);
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      border: 2px solid var(--blue-4);
+      transition: 0.3s;
+      font-weight: 600;
+      font-size: 1rem;
+    }
+
+    .nav a:hover {
+      background-color: var(--blue-4);
+      color: white;
+    }
+
+    .cert-container {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      max-width: 800px;
+      margin: 2rem auto;
+      animation: fadeIn 1s ease forwards;
+      text-align: center;
+    }
+
+    .cert-container h2 {
+      color: var(--blue-5);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-size: 1.8rem;
+    }
+
+    .view-btn {
+      display: inline-block;
+      background-color: var(--blue-4);
+      color: white;
+      padding: 0.7rem 1.4rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0.6rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .view-btn:hover {
+      background-color: var(--blue-5);
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .nav {
+        flex-direction: column;
+        align-items: center;
+      }
+      .nav a {
+        width: 100%;
+        text-align: center;
+      }
+      .view-btn {
+        width: 90%;
+      }
+    }
+    .projects-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      max-width: 1000px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .project-card {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 1rem;
+    }
+
+    .project-card h3 {
+      color: var(--blue-5);
+      margin-bottom: 0.5rem;
+    }
+
+    .project-card p {
+      color: #333;
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .project-card a {
+      display: inline-block;
+      text-decoration: none;
+      background-color: var(--blue-4);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+
+    .project-card a:hover {
+      background-color: var(--blue-5);
+    }
+    .active-link {
+      background-color: var(--blue-4);
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 5px;
+      border: 2px solid var(--blue-4);
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: default;
+      opacity: 0.9;
+}
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: var(--blue-5);
+      color: white;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+    <div class="nav">
+      <a href="index.html">🏠 Home</a>
+      <a href="education.html">Education</a>  
+      <a href="certifications.html">Certifications</a>
+      <a href="skills.html">Skills</a>
+      <a href="resume.html">Resume</a>
+</div>
+
+  <main>
+    <section class="projects-container">
+      <!-- AquaTrack -->
+      <div class="project-card">
+        <img src="aquatrackposter.png" alt="AquaTrack Poster">
+        <h3>🌊 AquaTrack</h3>
+        <p>AI-integrated mobile and web system for water refilling station management in Butuan City.</p>
+        <a href="aquatrackdetails.html">View Details</a>
+      </div>
+
+      <!-- Artworks -->
+      <div class="project-card">
+        <img src="artwork15.png" alt="Artworks">
+        <h3>🎨 Artworks Collection</h3>
+        <p>A showcase of my hand-drawn and digital artworks expressing creativity and visual storytelling.</p>
+        <a href="artworks.html">View Gallery</a>
+      </div>
+    </section>
+  </main>
+</body>
+  <footer>
+    &copy; 2025 Edmer John D. Pino. All rights reserved.
+  </footer>
+</html>
