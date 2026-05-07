@@ -45,7 +45,6 @@ header h1 {
 
 header p {
   font-size: 1.1rem;
-  color: #e0e0e0;
 }
 html {
   scroll-behavior: smooth;
@@ -54,7 +53,7 @@ html {
 .tagline {
   font-family: 'Brush Script MT', cursive;
   font-size: 1.3rem;
-  color: #4b4b4b;
+  color: #e0e0e0;
   letter-spacing: 1px;
 }
 .intro {
