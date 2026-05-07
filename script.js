@@ -173,6 +173,27 @@ document.addEventListener('DOMContentLoaded', function() {
     };
   }
 
+  // ===== Dark Mode Toggle =====
+  // Load dark mode preference on all pages
+  if (localStorage.getItem('theme') === 'dark') {
+    document.body.classList.add('dark-mode');
+  }
+
+  // Set up toggle button if it exists (only on homepage)
+  const darkModeToggle = document.getElementById('darkModeToggle');
+  if (darkModeToggle) {
+    if (localStorage.getItem('theme') === 'dark') {
+      darkModeToggle.textContent = '☀️';
+    }
+
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const isDark = document.body.classList.contains('dark-mode');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      darkModeToggle.textContent = isDark ? '☀️' : '🌙';
+    });
+  }
+
   // ===== Image Zoom & Gallery Functionality =====
   const modal = document.getElementById('imageModal');
   const modalImg = document.getElementById('modalImage');

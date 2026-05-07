@@ -24,6 +24,9 @@ header {
   background: var(--blue-5);
   color: white;
   padding: 3rem 1rem;
+  background: linear-gradient(135deg, var(--blue-5), var(--blue-3));
+  background-size: 200% 200%;
+  animation: gradientShift 8s ease infinite;
 }
 
 header img {
@@ -228,7 +231,7 @@ ul {
 footer {
   text-align: center;
   padding: 1rem;
-  background: var(--blue-4);
+  background: linear-gradient(135deg, var(--blue-5), var(--blue-3));
   color: white;
   margin-top: 2rem;
   box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.1);
@@ -249,61 +252,193 @@ footer {
   }
 }
 
+/* ===== DARK MODE GLOBAL STYLES ===== */
+body.dark-mode {
+  background-color: #0a0a0a;
+  color: #e0e0e0;
+}
+
+body.dark-mode header {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+}
+
+body.dark-mode header h1 {
+  background: linear-gradient(to right, #64b5f6, #e0e0e0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+body.dark-mode header p {
+  color: #b0b0b0;
+}
+
+body.dark-mode .tagline {
+  color: #b0b0b0;
+}
+
+body.dark-mode .nav a {
+  background-color: #222;
+  color: #64b5f6;
+  border-color: #64b5f6;
+}
+
+body.dark-mode .nav a:hover {
+  background-color: #64b5f6;
+  color: #0a0a0a;
+}
+
+body.dark-mode main {
+  background-color: #1a1a1a;
+  color: #e0e0e0;
+}
+
+body.dark-mode h2 {
+  color: #64b5f6;
+}
+
+body.dark-mode h3 {
+  color: #64b5f6;
+}
+
+body.dark-mode .about-me h2 {
+  color: #64b5f6;
+}
+
+body.dark-mode .contacts h2 {
+  color: #64b5f6;
+}
+
+body.dark-mode .contacts p {
+  color: #b0b0b0;
+}
+
+body.dark-mode .contacts a {
+  color: #64b5f6;
+}
+
+body.dark-mode .contacts a:hover {
+  color: #90caf9;
+}
+
+body.dark-mode footer {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #e0e0e0;
+}
+
+body.dark-mode ul {
+  color: #b0b0b0;
+}
+
+body.dark-mode ul li {
+  color: #b0b0b0;
+}
+
+body.dark-mode a {
+  color: #64b5f6;
+}
+
+body.dark-mode a:hover {
+  color: #90caf9;
+}
+
+body.dark-mode .intro {
+  color: #b0b0b0;
+}
+
+body.dark-mode img {
+  opacity: 0.9;
+}
+
+/* Dark mode for buttons */
+body.dark-mode button {
+  background-color: #333;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+body.dark-mode button:hover {
+  background-color: #444;
+}
+
+/* Dark mode for form elements */
+body.dark-mode input,
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #222;
+  color: #e0e0e0;
+  border-color: #444;
+}
+
+body.dark-mode input:focus,
+body.dark-mode textarea:focus,
+body.dark-mode select:focus {
+  border-color: #64b5f6;
+  background-color: #2a2a2a;
+}
+
+/* Smooth transition for dark mode */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
 /* ===== DARK MODE FOR SPECIFIC PAGES ===== */
 
 /* Project page */
-.cert-container {
-  background: white;
-  color: #222;
+body.dark-mode .cert-container {
+  background: #1a1a1a;
+  color: #e0e0e0;
 }
 
-.cert-container h2,
-.cert-container h3 {
-  color: var(--blue-5);
+body.dark-mode .cert-container h2,
+body.dark-mode .cert-container h3 {
+  color: #64b5f6;
 }
 
-.cert-container p {
-  color: #333;
+body.dark-mode .cert-container p {
+  color: #ffffff;
 }
 
 /* Resume page */
-.resume-container {
-  background: white;
-  color: #222;
+body.dark-mode .resume-container {
+  background: #1a1a1a;
+  color: #e0e0e0;
 }
 
-.resume-container h2,
-.resume-container h3 {
-  color: var(--blue-5);
+body.dark-mode .resume-container h2,
+body.dark-mode .resume-container h3 {
+  color: #64b5f6;
 }
 
-.resume-container p {
-  color: #333;
+body.dark-mode .resume-container p {
+  color: #ffffff;
 }
 
-.resume-container ul li {
-  color: #333;
+body.dark-mode .resume-container ul li {
+  color: #ffffff;
 }
 
 /* About me and intro paragraphs */
-.about-me p,
-.intro p {
-  color: #333;
+body.dark-mode .about-me p,
+body.dark-mode .intro p {
+  color: #ffffff;
 }
 
-/* Navigation on all pages */
-.nav {
-  background: var(--blue-5);
+/* Dark mode for navigation on all pages */
+body.dark-mode .nav {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
 }
 
-.nav a {
-  background-color: white;
-  color: var(--blue-4);
-  border-color: var(--blue-4);
+body.dark-mode .nav a {
+  background-color: #222;
+  color: #64b5f6;
+  border-color: #64b5f6;
 }
 
-.nav a:hover {
-  background-color: var(--blue-4);
-  color: white;
+body.dark-mode .nav a:hover {
+  background-color: #64b5f6;
+  color: #0a0a0a;
 }
+<meta property="og:title" content="Edmer John D. Pino | Front-End Developer">
+<meta property="og:description" content="Portfolio of Edmer Pino – front-end developer and creative designer.">
+<meta property="og:image" content="preview.png">
 
